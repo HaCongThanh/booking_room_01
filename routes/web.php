@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/*---------------------- User Route ---------------------*/
+Route::get('/', 'User\HomeController@index')->name('user.home.index');
+
+Route::get('/find-rooms', 'User\HomeController@findRooms')->name('user.home.find_rooms');
+/*-------------------------------------------------------*/
+
+/*---------------------- Admin Route --------------------*/
+Route::group(['prefix' => 'admin'], function() {
+	
 });
+/*-------------------------------------------------------*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
