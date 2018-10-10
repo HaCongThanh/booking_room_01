@@ -15,6 +15,11 @@
 Route::group(['prefix' => 'admin'], function() {
 
 });
+
+/*---------------------- User Route ---------------------*/
+Route::get('/', 'User\HomeController@index')->name('user.home.index');
+
+Route::get('/find-rooms', 'User\HomeController@findRooms')->name('user.home.find_rooms');
 /*-------------------------------------------------------*/
 
 Auth::routes();
